@@ -1,0 +1,100 @@
+server:
+  port: 8000
+
+spring:
+  profiles: local
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: common
+          predicates:
+            - Path=/cmm/**
+          uri: http://localhost:8081
+          filters:
+            - RewritePath=/cmm/(?<segment>.*), /$\{segment}
+
+        - id: clientsatisfaction
+          predicates:
+            - Path=/cls/**
+          uri: http://localhost:8082
+          filters:
+            - RewritePath=/cls/(?<segment>.*), /$\{segment}
+
+        - id: clientmanagement
+          predicates:
+            - Path=/clm/**
+          uri: http://localhost:8083
+          filters:
+            - RewritePath=/clm/(?<segment>.*), /$\{segment}
+
+        - id: clientsalesactive
+          predicates:
+            - Path=/clsa/**
+          uri: http://localhost:8084
+          filters:
+            - RewritePath=/clsa/(?<segment>.*), /$\{segment}
+
+        - id: admin
+          predicates:
+            - Path=/admin/**
+          uri: http://localhost:8085
+          filters:
+            - RewritePath=/admin/(?<segment>.*), /$\{segment}
+
+        - id: dashboard
+          predicates:
+            - Path=/dsbd/**
+          uri: http://localhost:8086
+          filters:
+            - RewritePath=/dsbd/(?<segment>.*), /$\{segment}
+
+        - id: bizstrategy
+          predicates:
+            - Path=/bst/**
+          uri: http://localhost:8087
+          filters:
+            - RewritePath=/bst/(?<segment>.*), /$\{segment}
+
+        - id: salesmanagement
+          predicates:
+            - Path=/bsm/**
+          uri: http://localhost:8088
+          filters:
+            - RewritePath=/bsm/(?<segment>.*), /$\{segment}
+
+        - id: calendar
+          predicates:
+            - Path=/cal/**
+          uri: http://localhost:8089
+          filters:
+            - RewritePath=/cal/(?<segment>.*), /$\{segment}
+
+        - id: search
+          predicates:
+            - Path=/srh/**
+          uri: http://localhost:8090
+          filters:
+            - RewritePath=/srh/(?<segment>.*), /$\{segment}
+
+        - id: partnermanagement
+          predicates:
+            - Path=/ptm/**
+          uri: http://localhost:8091
+          filters:
+            - RewritePath=/ptm/(?<segment>.*), /$\{segment}
+
+        - id: tracking
+          predicates:
+            - Path=/trck/**
+          uri: http://localhost:8092
+          filters:
+            - RewritePath=/trck/(?<segment>.*), /$\{segment}
+
+        - id: auth
+          predicates:
+            - Path=/auth/**
+          uri: http://localhost:8070
+          filters:
+            - RewritePath=/auth/(?<segment>.*), /$\{segment}

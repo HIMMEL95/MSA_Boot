@@ -1,0 +1,90 @@
+#root {
+    background-color: black;
+}
+
+.App {
+    text-align: center;
+    background-color: black;
+}
+
+.App-logo {
+    height: 30vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.App-header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+.card {
+    border-radius: 20px;
+    height: 550px;
+    box-shadow: 0px 0px 40px yellow;
+}
+
+.card-body {
+    display: inline;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.row {
+    margin: 10px 5px;
+}
+
+.mb-3 {
+    text-align: left;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.form-label {
+    text-align: center;
+}
+
+.loginBtn {
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.forgetBtn {
+    color: black ;
+    width: 320px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.btn-icon {
+    background: white;
+    color: black;
+    font-size: large;
+    font-weight: 700;
+}
+
+.btn-google:hover {
+    background: #0F9D58;
+}
+
+.btn-facebook:hover {
+    background: #4267B2;
+}

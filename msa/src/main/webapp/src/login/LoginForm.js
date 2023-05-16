@@ -1,23 +1,18 @@
 import axios from "axios";
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 function LoginForm() {
   useEffect(() => {
     var id = document.getElementById("inputId").value;
     var pw = document.getElementById("inputPw").value;
 
-    axios.post("/api/loginProcess.do", {
-      member_id_num : id,
-      password_enc: pw
-    })
-    .then(function(response) {
+    axios.post("http://localhost:8080/api/loginProcess",
+    {withCredentials: true})
+    .then(response => {
       console.log(response);
-    }).catch(function(error) {
-      console.log(error);
-    });
+  })
 
   }, []);
-
 
   function submitData (e) {
     var id = document.getElementById("inputId").value;
@@ -25,7 +20,7 @@ function LoginForm() {
     alert(id + " " + pw);
 
     axios
-      .post("/api/loginProcess.do", {
+      .post("/api/loginProcess", {
         id: id,
         pw: pw,
       })
